@@ -8,14 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		F7EE6DB41C156E2400F65506 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F7EE6DB31C156E2400F65506 /* main.m */; };
-		F7EE6DB71C156E2400F65506 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F7EE6DB61C156E2400F65506 /* AppDelegate.m */; };
-		F7EE6DBA1C156E2400F65506 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7EE6DB91C156E2400F65506 /* ViewController.m */; };
 		F7EE6DBD1C156E2400F65506 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7EE6DBB1C156E2400F65506 /* Main.storyboard */; };
 		F7EE6DC01C156E2400F65506 /* Peek_Challenge_Aditya.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F7EE6DBE1C156E2400F65506 /* Peek_Challenge_Aditya.xcdatamodeld */; };
 		F7EE6DC21C156E2400F65506 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7EE6DC11C156E2400F65506 /* Assets.xcassets */; };
 		F7EE6DC51C156E2400F65506 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7EE6DC31C156E2400F65506 /* LaunchScreen.storyboard */; };
 		F7EE6DD01C156E2400F65506 /* Peek_Challenge_AdityaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F7EE6DCF1C156E2400F65506 /* Peek_Challenge_AdityaTests.m */; };
 		F7EE6DDB1C156E2400F65506 /* Peek_Challenge_AdityaUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F7EE6DDA1C156E2400F65506 /* Peek_Challenge_AdityaUITests.m */; };
+		F7EE6DE91C157D5400F65506 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7EE6DE81C157D5400F65506 /* Social.framework */; };
+		F7EE6DEB1C157D5800F65506 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7EE6DEA1C157D5800F65506 /* Accounts.framework */; };
+		F7EE6DED1C157D5E00F65506 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7EE6DEC1C157D5E00F65506 /* Twitter.framework */; };
+		F7EE6DFB1C15834700F65506 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F7EE6DF41C15834700F65506 /* AppDelegate.m */; };
+		F7EE6DFC1C15834700F65506 /* TweeterHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F7EE6DF71C15834700F65506 /* TweeterHomeVC.m */; };
+		F7EE6DFD1C15834700F65506 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7EE6DFA1C15834700F65506 /* ViewController.m */; };
+		F7EE6E091C16FF6000F65506 /* Pic-1.png in Resources */ = {isa = PBXBuildFile; fileRef = F7EE6E071C16FF6000F65506 /* Pic-1.png */; };
+		F7EE6E0A1C16FF6000F65506 /* Pic-2.png in Resources */ = {isa = PBXBuildFile; fileRef = F7EE6E081C16FF6000F65506 /* Pic-2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,10 +44,6 @@
 /* Begin PBXFileReference section */
 		F7EE6DAF1C156E2400F65506 /* Peek_Challenge_Aditya.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Peek_Challenge_Aditya.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7EE6DB31C156E2400F65506 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		F7EE6DB51C156E2400F65506 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		F7EE6DB61C156E2400F65506 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		F7EE6DB81C156E2400F65506 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		F7EE6DB91C156E2400F65506 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		F7EE6DBC1C156E2400F65506 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F7EE6DBF1C156E2400F65506 /* Peek_Challenge_Aditya.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Peek_Challenge_Aditya.xcdatamodel; sourceTree = "<group>"; };
 		F7EE6DC11C156E2400F65506 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -53,6 +55,17 @@
 		F7EE6DD61C156E2400F65506 /* Peek_Challenge_AdityaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Peek_Challenge_AdityaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7EE6DDA1C156E2400F65506 /* Peek_Challenge_AdityaUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Peek_Challenge_AdityaUITests.m; sourceTree = "<group>"; };
 		F7EE6DDC1C156E2400F65506 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7EE6DE81C157D5400F65506 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		F7EE6DEA1C157D5800F65506 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		F7EE6DEC1C157D5E00F65506 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		F7EE6DF31C15834700F65506 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F7EE6DF41C15834700F65506 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F7EE6DF61C15834700F65506 /* TweeterHomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweeterHomeVC.h; sourceTree = "<group>"; };
+		F7EE6DF71C15834700F65506 /* TweeterHomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweeterHomeVC.m; sourceTree = "<group>"; };
+		F7EE6DF91C15834700F65506 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		F7EE6DFA1C15834700F65506 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F7EE6E071C16FF6000F65506 /* Pic-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pic-1.png"; sourceTree = "<group>"; };
+		F7EE6E081C16FF6000F65506 /* Pic-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pic-2.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +73,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7EE6DED1C157D5E00F65506 /* Twitter.framework in Frameworks */,
+				F7EE6DEB1C157D5800F65506 /* Accounts.framework in Frameworks */,
+				F7EE6DE91C157D5400F65506 /* Social.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +99,9 @@
 		F7EE6DA61C156E2400F65506 = {
 			isa = PBXGroup;
 			children = (
+				F7EE6DEC1C157D5E00F65506 /* Twitter.framework */,
+				F7EE6DEA1C157D5800F65506 /* Accounts.framework */,
+				F7EE6DE81C157D5400F65506 /* Social.framework */,
 				F7EE6DB11C156E2400F65506 /* Peek_Challenge_Aditya */,
 				F7EE6DCE1C156E2400F65506 /* Peek_Challenge_AdityaTests */,
 				F7EE6DD91C156E2400F65506 /* Peek_Challenge_AdityaUITests */,
@@ -103,10 +122,8 @@
 		F7EE6DB11C156E2400F65506 /* Peek_Challenge_Aditya */ = {
 			isa = PBXGroup;
 			children = (
-				F7EE6DB51C156E2400F65506 /* AppDelegate.h */,
-				F7EE6DB61C156E2400F65506 /* AppDelegate.m */,
-				F7EE6DB81C156E2400F65506 /* ViewController.h */,
-				F7EE6DB91C156E2400F65506 /* ViewController.m */,
+				F7EE6E061C16FF3700F65506 /* Resources */,
+				F7EE6DF11C15834700F65506 /* Classes */,
 				F7EE6DBB1C156E2400F65506 /* Main.storyboard */,
 				F7EE6DC11C156E2400F65506 /* Assets.xcassets */,
 				F7EE6DC31C156E2400F65506 /* LaunchScreen.storyboard */,
@@ -141,6 +158,53 @@
 				F7EE6DDC1C156E2400F65506 /* Info.plist */,
 			);
 			path = Peek_Challenge_AdityaUITests;
+			sourceTree = "<group>";
+		};
+		F7EE6DF11C15834700F65506 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				F7EE6DF21C15834700F65506 /* AppDelegate */,
+				F7EE6DF51C15834700F65506 /* TwtterHomeVC */,
+				F7EE6DF81C15834700F65506 /* ViewController */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		F7EE6DF21C15834700F65506 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				F7EE6DF31C15834700F65506 /* AppDelegate.h */,
+				F7EE6DF41C15834700F65506 /* AppDelegate.m */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		F7EE6DF51C15834700F65506 /* TwtterHomeVC */ = {
+			isa = PBXGroup;
+			children = (
+				F7EE6DF61C15834700F65506 /* TweeterHomeVC.h */,
+				F7EE6DF71C15834700F65506 /* TweeterHomeVC.m */,
+			);
+			path = TwtterHomeVC;
+			sourceTree = "<group>";
+		};
+		F7EE6DF81C15834700F65506 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F7EE6DF91C15834700F65506 /* ViewController.h */,
+				F7EE6DFA1C15834700F65506 /* ViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		F7EE6E061C16FF3700F65506 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F7EE6E071C16FF6000F65506 /* Pic-1.png */,
+				F7EE6E081C16FF6000F65506 /* Pic-2.png */,
+			);
+			name = Resources;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +274,7 @@
 				TargetAttributes = {
 					F7EE6DAE1C156E2400F65506 = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = P87L74H9YS;
 					};
 					F7EE6DCA1C156E2400F65506 = {
 						CreatedOnToolsVersion = 7.1;
@@ -247,7 +312,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7EE6DC51C156E2400F65506 /* LaunchScreen.storyboard in Resources */,
+				F7EE6E0A1C16FF6000F65506 /* Pic-2.png in Resources */,
 				F7EE6DC21C156E2400F65506 /* Assets.xcassets in Resources */,
+				F7EE6E091C16FF6000F65506 /* Pic-1.png in Resources */,
 				F7EE6DBD1C156E2400F65506 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -273,10 +340,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7EE6DFC1C15834700F65506 /* TweeterHomeVC.m in Sources */,
 				F7EE6DC01C156E2400F65506 /* Peek_Challenge_Aditya.xcdatamodeld in Sources */,
-				F7EE6DBA1C156E2400F65506 /* ViewController.m in Sources */,
-				F7EE6DB71C156E2400F65506 /* AppDelegate.m in Sources */,
 				F7EE6DB41C156E2400F65506 /* main.m in Sources */,
+				F7EE6DFB1C15834700F65506 /* AppDelegate.m in Sources */,
+				F7EE6DFD1C15834700F65506 /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,7 +435,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -404,7 +472,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -415,7 +483,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Peek_Challenge_Aditya/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tanna.Peek-Challenge-Aditya";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -426,7 +496,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Peek_Challenge_Aditya/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tanna.Peek-Challenge-Aditya";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -500,6 +572,7 @@
 				F7EE6DE11C156E2400F65506 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F7EE6DE21C156E2400F65506 /* Build configuration list for PBXNativeTarget "Peek_Challenge_AdityaTests" */ = {
 			isa = XCConfigurationList;
@@ -508,6 +581,7 @@
 				F7EE6DE41C156E2400F65506 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F7EE6DE51C156E2400F65506 /* Build configuration list for PBXNativeTarget "Peek_Challenge_AdityaUITests" */ = {
 			isa = XCConfigurationList;
@@ -516,6 +590,7 @@
 				F7EE6DE71C156E2400F65506 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
