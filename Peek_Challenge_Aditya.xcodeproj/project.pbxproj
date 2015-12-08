@@ -22,6 +22,7 @@
 		F7EE6DFD1C15834700F65506 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7EE6DFA1C15834700F65506 /* ViewController.m */; };
 		F7EE6E091C16FF6000F65506 /* Pic-1.png in Resources */ = {isa = PBXBuildFile; fileRef = F7EE6E071C16FF6000F65506 /* Pic-1.png */; };
 		F7EE6E0A1C16FF6000F65506 /* Pic-2.png in Resources */ = {isa = PBXBuildFile; fileRef = F7EE6E081C16FF6000F65506 /* Pic-2.png */; };
+		F7EE6E1C1C17157000F65506 /* iOS App-Description.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F7EE6E1B1C17157000F65506 /* iOS App-Description.pdf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		F7EE6DFA1C15834700F65506 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		F7EE6E071C16FF6000F65506 /* Pic-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pic-1.png"; sourceTree = "<group>"; };
 		F7EE6E081C16FF6000F65506 /* Pic-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pic-2.png"; sourceTree = "<group>"; };
+		F7EE6E1B1C17157000F65506 /* iOS App-Description.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "iOS App-Description.pdf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 		F7EE6DB11C156E2400F65506 /* Peek_Challenge_Aditya */ = {
 			isa = PBXGroup;
 			children = (
+				F7EE6E1B1C17157000F65506 /* iOS App-Description.pdf */,
 				F7EE6E061C16FF3700F65506 /* Resources */,
 				F7EE6DF11C15834700F65506 /* Classes */,
 				F7EE6DBB1C156E2400F65506 /* Main.storyboard */,
@@ -313,6 +316,7 @@
 			files = (
 				F7EE6DC51C156E2400F65506 /* LaunchScreen.storyboard in Resources */,
 				F7EE6E0A1C16FF6000F65506 /* Pic-2.png in Resources */,
+				F7EE6E1C1C17157000F65506 /* iOS App-Description.pdf in Resources */,
 				F7EE6DC21C156E2400F65506 /* Assets.xcassets in Resources */,
 				F7EE6E091C16FF6000F65506 /* Pic-1.png in Resources */,
 				F7EE6DBD1C156E2400F65506 /* Main.storyboard in Resources */,
