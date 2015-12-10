@@ -10,11 +10,9 @@
 #import <Accounts/Accounts.h>
 #import <Social/Social.h>
 #import <Twitter/Twitter.h>
+#import "Twitter.h"
 @interface TweeterHomeVC ()
 {
-    ACAccountStore *Store;
-    ACAccountType *AccountType;
-    ACAccount *Account;
 }
 @end
 
@@ -23,68 +21,53 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.refreshControl = [[UIRefreshControl alloc]init];
+    self.mutArrTweets = [[NSMutableArray alloc]init];
+    self.mutArrDisplayTweets = [[NSMutableArray alloc]init];
     [self.tblTweets addSubview:self.refreshControl];
     [self.refreshControl addTarget:self action:@selector(refreshTweetTable) forControlEvents:UIControlEventValueChanged];
-    
-    Store = [[ACAccountStore alloc]init];
-    AccountType = [Store accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
-    Account = [[Store accountsWithAccountType:AccountType] lastObject];
+   
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    self.mutArrTweets = nil;
-    self.mutArrTweets = [[NSMutableArray alloc]init];
-    
     [self.tblTweets setHidden:NO];
     [self.lblNoTweetFound setHighlighted:YES];
-    
     [self LoadUI];
 }
 
 #pragma mark - Getting Tweets for specific username
 -(void)getTweets{
-    [self.mutArrTweets removeAllObjects];
     
-    [Store requestAccessToAccountsWithType:AccountType options:nil completion:^(BOOL granted, NSError *error) {
+    [self.mutArrTweets removeAllObjects];
+    [self.mutArrDisplayTweets removeAllObjects];
+    displayCnt = 10;
+    for (NSDictionary *aDict in self.mutArrUserData) {
         
-    NSString *aStrScreenName = [NSString stringWithFormat:@"%@",[(NSDictionary *)self.mutArrUserData objectForKey:@"screen_name"]];
-        
-    NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=%@",aStrScreenName]];
-        
-    SLRequest *aRequest = [SLRequest requestForServiceType:SLServiceTypeTwitter requestMethod:SLRequestMethodGET URL:requestURL parameters:nil];
-        
-    [aRequest setAccount:Account];
-        
-    [aRequest performRequestWithHandler:^(NSData *responseData, NSHTTPURLResponse *urlResponse, NSError *error) {
-            
-        if (error) {
-            NSLog(@"Error: %@",error.description);
-        }
-        else{
-
-            NSArray *array = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableLeaves error:nil];
-                
-            for (NSDictionary *aDict in array) {
-                [self.mutArrTweets addObject:[NSDictionary dictionaryWithObjectsAndKeys:[aDict objectForKey:@"text"],@"tweet",[aDict objectForKey:@"id"],@"id", nil]];
-            }
-            [self displayTweets];
-        }
-    }];
-    }];
+        [self.mutArrTweets addObject:[NSDictionary dictionaryWithObjectsAndKeys:[aDict objectForKey:@"text"],@"tweet",[aDict objectForKey:@"id"],@"id", nil]];
+    }
+    if (displayCnt >self.mutArrTweets.count) {
+        displayCnt = (int) self.mutArrTweets.count;
+    }
+    for (int i = (int)self.mutArrDisplayTweets.count; i < displayCnt; i++) {
+            [self.mutArrDisplayTweets addObject:[self.mutArrTweets objectAtIndex:i]];
+    }
+    [self displayTweets];
 }
+
 -(void)displayTweets{
     [[UIApplication sharedApplication] endIgnoringInteractionEvents];
     
-    if ([self.mutArrTweets count]>0) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.tblTweets reloadData];
-        });
+    if (self.mutArrDisplayTweets.count>0) {
+    
+        [self.tblTweets reloadData];
     }else{
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tblTweets setHidden:YES];
             [self.lblNoTweetFound setHidden:NO];
-            [self.lblNoTweetFound setText:[NSString stringWithFormat:@"No Tweets found for username %@",[(NSDictionary *)self.mutArrUserData objectForKey:@"screen_name"]]];
+            if (self.mutArrUserData.count > 0) {
+                  [self.lblNoTweetFound setText:[NSString stringWithFormat:@"No Tweets found for username %@",[[[self.mutArrUserData objectAtIndex:0] objectForKey:@"user"] objectForKey:@"screen_name"]]];
+            }
+          
         });
     }
     
@@ -93,60 +76,40 @@
     }
 }
 
+
 -(void)reTweet:(NSString*) tweetId{
    
-    [Store requestAccessToAccountsWithType:AccountType options:nil completion:^(BOOL granted, NSError *error) {
-        
-        SLRequest *aRequest = [SLRequest requestForServiceType:SLServiceTypeTwitter requestMethod:SLRequestMethodPOST URL:[NSURL URLWithString:[NSString stringWithFormat:@"https://api.twitter.com/1.1/statuses/retweet/%@.json",tweetId]] parameters:nil];
-        [aRequest setAccount:Account];
-        
-        [aRequest performRequestWithHandler:^(NSData *responseData, NSHTTPURLResponse *urlResponse, NSError *error) {
+    [Twitter getTWitterDataWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://api.twitter.com/1.1/statuses/retweet/%lld.json",[tweetId longLongValue]]] withParamaters:nil withHTTPMethod:SLRequestMethodPOST :^(NSArray *array) {
+    
+        if ([array isKindOfClass:[NSDictionary class]] && [(NSDictionary *)array objectForKey:@"errors"]) {
             
-            if (error) {
-                NSLog(@"Error: %@",error.description);
-            }
-            else{
-                 NSArray *array = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableLeaves error:nil];
-                
-                if ([(NSDictionary *)self.mutArrUserData objectForKey:@"errors"]){
-                    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"" message:[[[(NSDictionary *)array objectForKey:@"errors"]objectAtIndex:0] objectForKey:@"message"] preferredStyle:UIAlertControllerStyleAlert];
-                    
-                    UIAlertAction *okAction = [UIAlertAction
-                                               actionWithTitle:NSLocalizedString(@"OK", @"OK action")
-                                               style:UIAlertActionStyleDefault
-                                               handler:^(UIAlertAction *action){
-                                                  
-                                               }];
-                    [alert addAction:okAction];
-                    
-                    [[UIApplication sharedApplication] endIgnoringInteractionEvents];
-                    
-                    [self presentViewController:alert animated:YES completion:^{
-                        
-                    }];
-                    
-                }else{
-                    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"" message:@" Successfully Re-Tweet." preferredStyle:UIAlertControllerStyleAlert];
-                    
-                    UIAlertAction *okAction = [UIAlertAction
-                                               actionWithTitle:NSLocalizedString(@"OK", @"OK action")
-                                               style:UIAlertActionStyleDefault
-                                               handler:^(UIAlertAction *action)
-                                               {
-                                                   
-                                               }];
-                    [alert addAction:okAction];
-                    
-                    [[UIApplication sharedApplication] endIgnoringInteractionEvents];
-                    
-                    [self presentViewController:alert animated:YES completion:^{
-                        
-                    }];
-                
-                }
-            }
-        }];
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"" message:[[[(NSDictionary *)array objectForKey:@"errors"]objectAtIndex:0] objectForKey:@"message"] delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [[UIApplication sharedApplication] endIgnoringInteractionEvents];
+                [alert show];
+            });
+        }else{
+            
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"" message:@"Successfully Re-Tweet." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [[UIApplication sharedApplication] endIgnoringInteractionEvents];
+                [alert show];
+            });
+        }
     }];
+}
+#pragma mark - UIAlertView Delegate
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    
+    if (alertView.tag == 2020) {
+        if (buttonIndex == 0) {
+            NSIndexPath *indexPath = [self.tblTweets indexPathForSelectedRow];
+            
+           [self reTweet:[NSString stringWithFormat:@"%@",[[self.mutArrTweets objectAtIndex:indexPath.row] objectForKey:@"id"]]];
+        }
+    }
 }
 #pragma mark - PullToRefresh
 -(void)refreshTweetTable{
@@ -157,20 +120,20 @@
 
 #pragma mark -Loading UI
 -(void)LoadUI{
-    NSString *name = [(NSDictionary *)self.mutArrUserData objectForKey:@"name"];
+    NSString *name = [[[self.mutArrUserData firstObject] objectForKey:@"user"] objectForKey:@"name" ];
     dispatch_async(dispatch_get_main_queue(), ^{
         self.title = [NSString stringWithFormat:@"%@'s Twitter",name];
     });
     
-    long followers = [[(NSDictionary *)self.mutArrUserData objectForKey:@"followers_count"] longValue];
+    long followers = [[[[self.mutArrUserData firstObject] objectForKey:@"user"] objectForKey:@"followers_count"] longValue];
     
-    long following = [[(NSDictionary *)self.mutArrUserData objectForKey:@"friends_count"] longValue];
+    long following = [[[[self.mutArrUserData firstObject] objectForKey:@"user"] objectForKey:@"friends_count"] longValue];
     
-    long tweets = [[(NSDictionary *)self.mutArrUserData objectForKey:@"statuses_count"] longValue];
+    long tweets = [[[[self.mutArrUserData firstObject] objectForKey:@"user"]objectForKey:@"statuses_count"] longValue];
     
-    NSString *profileImageStringURL = [(NSDictionary *)self.mutArrUserData objectForKey:@"profile_image_url_https"];
+    NSString *profileImageStringURL = [[[self.mutArrUserData firstObject] objectForKey:@"user"]objectForKey:@"profile_image_url_https"];
     
-    NSString *bannerImageStringURL =[(NSDictionary *)self.mutArrUserData objectForKey:@"profile_banner_url"];
+    NSString *bannerImageStringURL =[[[self.mutArrUserData firstObject] objectForKey:@"user"] objectForKey:@"profile_banner_url"];
     
     // Update the interface with the loaded data
     self.lblTweetsCount.text = [NSString stringWithFormat:@"%ld", tweets];
@@ -184,8 +147,7 @@
     
     if (bannerImageStringURL) {
         NSString *bannerURLString = [NSString stringWithFormat:@"%@/mobile_retina", bannerImageStringURL];
-        
-        [self performSelectorInBackground:@selector(getBannerImageForURLString:) withObject:bannerURLString];
+       [self performSelectorInBackground:@selector(getBannerImageForURLString:) withObject:bannerURLString];
         
     } else {
         self.imgBannerView.backgroundColor = [UIColor whiteColor];
@@ -214,63 +176,68 @@
     });
 }
 
-
-
 #pragma mark - Table view Data source & Delegate mathods
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.mutArrTweets count];
+    if (self.mutArrDisplayTweets.count == self.mutArrTweets.count){
+        return self.mutArrDisplayTweets.count;
+    }
+    return self.mutArrDisplayTweets.count + 1;
 }
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-    
-    if (indexPath.row % 2 == 0) {
-        [cell setBackgroundColor:[UIColor whiteColor]];
+     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    if (indexPath.row == self.mutArrDisplayTweets.count) {
+        
+        cell.textLabel.text = @"Loading more items...";
+        cell.textLabel.textColor = [UIColor blueColor];
+        cell.textLabel.font = [UIFont boldSystemFontOfSize:14];
+        
+    } else {
+        if (indexPath.row % 2 == 0) {
+            [cell setBackgroundColor:[UIColor whiteColor]];
+        }
+        else {
+            [cell setBackgroundColor:[UIColor lightGrayColor]];
+        }
+        
+        cell.textLabel.numberOfLines = 0;
+        CGSize maximumLabelSize = CGSizeMake(296, 9999);
+        
+        CGSize expectedLabelSize = [[[self.mutArrTweets objectAtIndex:indexPath.row] objectForKey:@"tweettweet"] sizeWithFont:cell.textLabel.font constrainedToSize:maximumLabelSize lineBreakMode:cell.textLabel.lineBreakMode];
+        CGRect newFrame = cell.textLabel.frame;
+        
+        newFrame.size.height = expectedLabelSize.height;
+        cell.textLabel.frame = newFrame;
+        cell.textLabel.textColor = [UIColor colorWithRed:96.0/255.0 green:96.0/255.0 blue:96.0/255.0 alpha:1.0];
+        cell.textLabel.text = [[self.mutArrTweets objectAtIndex:indexPath.row] objectForKey:@"tweet"];
     }
-    else {
-        [cell setBackgroundColor:[UIColor lightGrayColor]];
-    }
-    
-    cell.textLabel.numberOfLines = 0;
-    CGSize maximumLabelSize = CGSizeMake(296, 9999);
-    
-    CGSize expectedLabelSize = [[[self.mutArrTweets objectAtIndex:indexPath.row] objectForKey:@"tweettweet"] sizeWithFont:cell.textLabel.font constrainedToSize:maximumLabelSize lineBreakMode:cell.textLabel.lineBreakMode];
-    CGRect newFrame = cell.textLabel.frame;
-    
-    newFrame.size.height = expectedLabelSize.height;
-    cell.textLabel.frame = newFrame;
-    cell.textLabel.textColor = [UIColor colorWithRed:96.0/255.0 green:96.0/255.0 blue:96.0/255.0 alpha:1.0];
-    cell.textLabel.text = [[self.mutArrTweets objectAtIndex:indexPath.row] objectForKey:@"tweet"];
-    
-    return cell;
+     return cell;
 }
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == self.mutArrDisplayTweets.count-1) {
+        [self performSelector:@selector(loadTweetsForTable) withObject:nil afterDelay:1.0];
+    }
+}
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Re-Tweet"
-                                                                   message:@"Are you sure,You want to Re-Tweet this Tweet ?"
-                                                            preferredStyle:UIAlertControllerStyleActionSheet];
-    UIAlertAction *firstAction = [UIAlertAction actionWithTitle:@"Yes"
-                                                          style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-                                                             
-                                                              [self reTweet:[NSString stringWithFormat:@"%@",[[self.mutArrTweets objectAtIndex:indexPath.row] objectForKey:@"id"]]];
-                                                          }];
-    UIAlertAction *secondAction = [UIAlertAction actionWithTitle:@"No"
-                                                           style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-                                                               NSLog(@"You pressed button No");
-                                                           }];
     
-    [alert addAction:firstAction];
-    [alert addAction:secondAction];
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Re-Tweet" message:@"Are you sure,You want to Re-Tweet this Tweet ?" delegate:self cancelButtonTitle:nil otherButtonTitles:@"Yes",@"No", nil];
     
-    [self presentViewController:alert animated:YES completion:nil];
+    alert.tag = 2020;
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[UIApplication sharedApplication] endIgnoringInteractionEvents];
+        [alert show];
+    });
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *str = [[self.mutArrTweets objectAtIndex:indexPath.row] objectForKey:@"tweet"];
     CGSize size = [str sizeWithFont:[UIFont fontWithName:@"Helvetica" size:17] constrainedToSize:CGSizeMake(280, 999) lineBreakMode:NSLineBreakByWordWrapping];
-    NSLog(@"%f",size.height);
     return size.height + 10;
 }
 
@@ -284,5 +251,17 @@
         [self.mutArrTweets removeObjectAtIndex:indexPath.row];
         [self.tblTweets reloadData];
     }
+}
+
+- (void)loadTweetsForTable{
+    displayCnt = displayCnt+10;
+    if (displayCnt > self.mutArrTweets.count) {
+        displayCnt = (int)self.mutArrTweets.count;
+    }
+    for (int i = (int)self.mutArrDisplayTweets.count; i < displayCnt; i++) {
+        [self.mutArrDisplayTweets addObject:[self.mutArrTweets objectAtIndex:i]];
+    }
+    
+    [self.tblTweets reloadData];
 }
 @end

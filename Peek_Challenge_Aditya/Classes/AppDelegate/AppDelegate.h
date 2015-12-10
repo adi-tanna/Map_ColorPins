@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
-
+#import "Reachability.h"
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
+{
+    Reachability *appReachability;
+}
 
 @property (strong, nonatomic) UIWindow *window;
 
@@ -19,7 +22,7 @@
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
-
-
++(AppDelegate*)sharedInstance;
+-(BOOL)checkNetwork;
 @end
 

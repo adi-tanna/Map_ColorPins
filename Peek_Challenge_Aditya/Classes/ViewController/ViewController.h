@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController<UITextFieldDelegate>
+@interface ViewController : UIViewController<UITextFieldDelegate,UIAlertViewDelegate>
+{
 
+}
 @property(nonatomic,strong) NSMutableArray *mutArrUserData;
 @property (weak, nonatomic) IBOutlet UITextField *txtSearch;
 

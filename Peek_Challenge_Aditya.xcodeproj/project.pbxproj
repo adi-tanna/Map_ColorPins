@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F706DEE91C19820900AA84D0 /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F706DEDF1C19820900AA84D0 /* Icon-60@2x.png */; };
+		F706DEEA1C19820900AA84D0 /* Icon-60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F706DEE01C19820900AA84D0 /* Icon-60@3x.png */; };
+		F706DEEB1C19820900AA84D0 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F706DEE21C19820900AA84D0 /* Icon-Small@2x.png */; };
+		F706DEEC1C19820900AA84D0 /* Icon-Small@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F706DEE31C19820900AA84D0 /* Icon-Small@3x.png */; };
+		F706DEED1C19820900AA84D0 /* Icon-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F706DEE51C19820900AA84D0 /* Icon-40@2x.png */; };
+		F706DEEE1C19820900AA84D0 /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F706DEE61C19820900AA84D0 /* Icon-60@2x.png */; };
+		F706DEEF1C19820900AA84D0 /* Pic-1.png in Resources */ = {isa = PBXBuildFile; fileRef = F706DEE71C19820900AA84D0 /* Pic-1.png */; };
+		F706DEF01C19820900AA84D0 /* Pic-2.png in Resources */ = {isa = PBXBuildFile; fileRef = F706DEE81C19820900AA84D0 /* Pic-2.png */; };
+		F706DEF21C19854D00AA84D0 /* StartBusiness.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F706DEF11C19854D00AA84D0 /* StartBusiness.jpg */; };
+		F706DEF71C1990DD00AA84D0 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = F706DEF61C1990DD00AA84D0 /* Reachability.m */; };
+		F7CAAD191C17B48200FF32A7 /* Twitter.m in Sources */ = {isa = PBXBuildFile; fileRef = F7CAAD181C17B48200FF32A7 /* Twitter.m */; };
 		F7EE6DB41C156E2400F65506 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F7EE6DB31C156E2400F65506 /* main.m */; };
 		F7EE6DBD1C156E2400F65506 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7EE6DBB1C156E2400F65506 /* Main.storyboard */; };
 		F7EE6DC01C156E2400F65506 /* Peek_Challenge_Aditya.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F7EE6DBE1C156E2400F65506 /* Peek_Challenge_Aditya.xcdatamodeld */; };
@@ -20,9 +31,6 @@
 		F7EE6DFB1C15834700F65506 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F7EE6DF41C15834700F65506 /* AppDelegate.m */; };
 		F7EE6DFC1C15834700F65506 /* TweeterHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F7EE6DF71C15834700F65506 /* TweeterHomeVC.m */; };
 		F7EE6DFD1C15834700F65506 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7EE6DFA1C15834700F65506 /* ViewController.m */; };
-		F7EE6E091C16FF6000F65506 /* Pic-1.png in Resources */ = {isa = PBXBuildFile; fileRef = F7EE6E071C16FF6000F65506 /* Pic-1.png */; };
-		F7EE6E0A1C16FF6000F65506 /* Pic-2.png in Resources */ = {isa = PBXBuildFile; fileRef = F7EE6E081C16FF6000F65506 /* Pic-2.png */; };
-		F7EE6E1C1C17157000F65506 /* iOS App-Description.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F7EE6E1B1C17157000F65506 /* iOS App-Description.pdf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +51,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F706DEDF1C19820900AA84D0 /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@2x.png"; sourceTree = "<group>"; };
+		F706DEE01C19820900AA84D0 /* Icon-60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@3x.png"; sourceTree = "<group>"; };
+		F706DEE21C19820900AA84D0 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
+		F706DEE31C19820900AA84D0 /* Icon-Small@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@3x.png"; sourceTree = "<group>"; };
+		F706DEE51C19820900AA84D0 /* Icon-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40@2x.png"; sourceTree = "<group>"; };
+		F706DEE61C19820900AA84D0 /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@2x.png"; sourceTree = "<group>"; };
+		F706DEE71C19820900AA84D0 /* Pic-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pic-1.png"; sourceTree = "<group>"; };
+		F706DEE81C19820900AA84D0 /* Pic-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pic-2.png"; sourceTree = "<group>"; };
+		F706DEF11C19854D00AA84D0 /* StartBusiness.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = StartBusiness.jpg; sourceTree = "<group>"; };
+		F706DEF51C1990DD00AA84D0 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		F706DEF61C1990DD00AA84D0 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		F706DEFA1C19947E00AA84D0 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		F7CAAD171C17B48200FF32A7 /* Twitter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Twitter.h; sourceTree = "<group>"; };
+		F7CAAD181C17B48200FF32A7 /* Twitter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Twitter.m; sourceTree = "<group>"; };
 		F7EE6DAF1C156E2400F65506 /* Peek_Challenge_Aditya.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Peek_Challenge_Aditya.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7EE6DB31C156E2400F65506 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F7EE6DBC1C156E2400F65506 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -65,9 +87,6 @@
 		F7EE6DF71C15834700F65506 /* TweeterHomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweeterHomeVC.m; sourceTree = "<group>"; };
 		F7EE6DF91C15834700F65506 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		F7EE6DFA1C15834700F65506 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		F7EE6E071C16FF6000F65506 /* Pic-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pic-1.png"; sourceTree = "<group>"; };
-		F7EE6E081C16FF6000F65506 /* Pic-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pic-2.png"; sourceTree = "<group>"; };
-		F7EE6E1B1C17157000F65506 /* iOS App-Description.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "iOS App-Description.pdf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +117,72 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F706DEDD1C19820900AA84D0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F706DEDE1C19820900AA84D0 /* App */,
+				F706DEE11C19820900AA84D0 /* iPhone Settings */,
+				F706DEE41C19820900AA84D0 /* iPhone SpotLight */,
+				F706DEE71C19820900AA84D0 /* Pic-1.png */,
+				F706DEE81C19820900AA84D0 /* Pic-2.png */,
+				F706DEF11C19854D00AA84D0 /* StartBusiness.jpg */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F706DEDE1C19820900AA84D0 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				F706DEDF1C19820900AA84D0 /* Icon-60@2x.png */,
+				F706DEE01C19820900AA84D0 /* Icon-60@3x.png */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		F706DEE11C19820900AA84D0 /* iPhone Settings */ = {
+			isa = PBXGroup;
+			children = (
+				F706DEE21C19820900AA84D0 /* Icon-Small@2x.png */,
+				F706DEE31C19820900AA84D0 /* Icon-Small@3x.png */,
+			);
+			path = "iPhone Settings";
+			sourceTree = "<group>";
+		};
+		F706DEE41C19820900AA84D0 /* iPhone SpotLight */ = {
+			isa = PBXGroup;
+			children = (
+				F706DEE51C19820900AA84D0 /* Icon-40@2x.png */,
+				F706DEE61C19820900AA84D0 /* Icon-60@2x.png */,
+			);
+			path = "iPhone SpotLight";
+			sourceTree = "<group>";
+		};
+		F706DEF31C1990DD00AA84D0 /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				F706DEF41C1990DD00AA84D0 /* Reachability */,
+			);
+			path = ThirdParty;
+			sourceTree = "<group>";
+		};
+		F706DEF41C1990DD00AA84D0 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				F706DEF51C1990DD00AA84D0 /* Reachability.h */,
+				F706DEF61C1990DD00AA84D0 /* Reachability.m */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
+		F7CAAD161C17B48200FF32A7 /* Twitter */ = {
+			isa = PBXGroup;
+			children = (
+				F7CAAD171C17B48200FF32A7 /* Twitter.h */,
+				F7CAAD181C17B48200FF32A7 /* Twitter.m */,
+			);
+			path = Twitter;
+			sourceTree = "<group>";
+		};
 		F7EE6DA61C156E2400F65506 = {
 			isa = PBXGroup;
 			children = (
@@ -124,8 +209,8 @@
 		F7EE6DB11C156E2400F65506 /* Peek_Challenge_Aditya */ = {
 			isa = PBXGroup;
 			children = (
-				F7EE6E1B1C17157000F65506 /* iOS App-Description.pdf */,
-				F7EE6E061C16FF3700F65506 /* Resources */,
+				F706DEF31C1990DD00AA84D0 /* ThirdParty */,
+				F706DEDD1C19820900AA84D0 /* Resources */,
 				F7EE6DF11C15834700F65506 /* Classes */,
 				F7EE6DBB1C156E2400F65506 /* Main.storyboard */,
 				F7EE6DC11C156E2400F65506 /* Assets.xcassets */,
@@ -141,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				F7EE6DB31C156E2400F65506 /* main.m */,
+				F706DEFA1C19947E00AA84D0 /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -166,6 +252,7 @@
 		F7EE6DF11C15834700F65506 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				F7CAAD161C17B48200FF32A7 /* Twitter */,
 				F7EE6DF21C15834700F65506 /* AppDelegate */,
 				F7EE6DF51C15834700F65506 /* TwtterHomeVC */,
 				F7EE6DF81C15834700F65506 /* ViewController */,
@@ -198,16 +285,6 @@
 				F7EE6DFA1C15834700F65506 /* ViewController.m */,
 			);
 			path = ViewController;
-			sourceTree = "<group>";
-		};
-		F7EE6E061C16FF3700F65506 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				F7EE6E071C16FF6000F65506 /* Pic-1.png */,
-				F7EE6E081C16FF6000F65506 /* Pic-2.png */,
-			);
-			name = Resources;
-			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,12 +391,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F706DEEA1C19820900AA84D0 /* Icon-60@3x.png in Resources */,
+				F706DEEE1C19820900AA84D0 /* Icon-60@2x.png in Resources */,
 				F7EE6DC51C156E2400F65506 /* LaunchScreen.storyboard in Resources */,
-				F7EE6E0A1C16FF6000F65506 /* Pic-2.png in Resources */,
-				F7EE6E1C1C17157000F65506 /* iOS App-Description.pdf in Resources */,
+				F706DEF01C19820900AA84D0 /* Pic-2.png in Resources */,
+				F706DEE91C19820900AA84D0 /* Icon-60@2x.png in Resources */,
+				F706DEED1C19820900AA84D0 /* Icon-40@2x.png in Resources */,
 				F7EE6DC21C156E2400F65506 /* Assets.xcassets in Resources */,
-				F7EE6E091C16FF6000F65506 /* Pic-1.png in Resources */,
 				F7EE6DBD1C156E2400F65506 /* Main.storyboard in Resources */,
+				F706DEF21C19854D00AA84D0 /* StartBusiness.jpg in Resources */,
+				F706DEEC1C19820900AA84D0 /* Icon-Small@3x.png in Resources */,
+				F706DEEB1C19820900AA84D0 /* Icon-Small@2x.png in Resources */,
+				F706DEEF1C19820900AA84D0 /* Pic-1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,6 +430,8 @@
 				F7EE6DFC1C15834700F65506 /* TweeterHomeVC.m in Sources */,
 				F7EE6DC01C156E2400F65506 /* Peek_Challenge_Aditya.xcdatamodeld in Sources */,
 				F7EE6DB41C156E2400F65506 /* main.m in Sources */,
+				F706DEF71C1990DD00AA84D0 /* Reachability.m in Sources */,
+				F7CAAD191C17B48200FF32A7 /* Twitter.m in Sources */,
 				F7EE6DFB1C15834700F65506 /* AppDelegate.m in Sources */,
 				F7EE6DFD1C15834700F65506 /* ViewController.m in Sources */,
 			);

@@ -11,7 +11,7 @@
 
 @interface TweeterHomeVC : UIViewController<UITableViewDataSource,UITableViewDelegate>
 {
-   
+    int displayCnt;
 }
 
 @property (strong, nonatomic) IBOutlet UIImageView *imgUserAvatar;
@@ -22,6 +22,7 @@
 
 @property (strong, nonatomic) NSMutableArray *mutArrUserData;
 @property (strong, nonatomic) NSMutableArray *mutArrTweets;
+@property (strong, nonatomic) NSMutableArray *mutArrDisplayTweets;
 
 @property (strong, nonatomic) IBOutlet UITableView *tblTweets;
 

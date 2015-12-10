@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="launch-button-square1 4.51.12 AM.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Vt8-DP-rYS">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="StartBusiness.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="wPA-2z-D7m">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <animations/>
                             </imageView>
@@ -26,10 +26,10 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="Vt8-DP-rYS" secondAttribute="trailing" constant="-20" id="5eZ-Cd-s7p"/>
-                            <constraint firstItem="Vt8-DP-rYS" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-20" id="7iL-ou-4dU"/>
-                            <constraint firstItem="Vt8-DP-rYS" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="-20" id="bFf-Zn-LLi"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="Vt8-DP-rYS" secondAttribute="bottom" id="tES-FD-dyz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wPA-2z-D7m" secondAttribute="trailing" constant="-20" id="d0v-qV-eUA"/>
+                            <constraint firstItem="wPA-2z-D7m" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-20" id="iCa-fY-Vbe"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="wPA-2z-D7m" secondAttribute="bottom" id="tu9-KW-aAo"/>
+                            <constraint firstItem="wPA-2z-D7m" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="-20" id="ulU-na-y6U"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -40,6 +40,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="launch-button-square1 4.51.12 AM.jpg" width="2528" height="2500"/>
+        <image name="StartBusiness.jpg" width="346" height="346"/>
     </resources>
 </document>

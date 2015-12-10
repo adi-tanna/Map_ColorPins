@@ -17,9 +17,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+     appReachability=[Reachability reachabilityForInternetConnection];
     return YES;
 }
 
++(AppDelegate*)sharedInstance
+{
+    return (AppDelegate*)[[UIApplication sharedApplication] delegate];
+}
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
@@ -93,6 +98,21 @@
     return _persistentStoreCoordinator;
 }
 
+-(BOOL)checkNetwork
+{
+    NetworkStatus currentStatus=[appReachability currentReachabilityStatus];
+    if ((currentStatus==ReachableViaWWAN) |(currentStatus==ReachableViaWiFi)) {
+        return YES;
+    }
+    else if(currentStatus==NotReachable)
+    {
+        UIAlertView *aAlerView = [[UIAlertView alloc] initWithTitle:@"" message:@"Network is not available. Please check internet." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [aAlerView show];
+        return NO;
+    }
+    return NO;
+    
+}
 
 - (NSManagedObjectContext *)managedObjectContext {
     // Returns the managed object context for the application (which is already bound to the persistent store coordinator for the application.)
