@@ -17,6 +17,7 @@
 		F706DEF01C19820900AA84D0 /* Pic-2.png in Resources */ = {isa = PBXBuildFile; fileRef = F706DEE81C19820900AA84D0 /* Pic-2.png */; };
 		F706DEF21C19854D00AA84D0 /* StartBusiness.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F706DEF11C19854D00AA84D0 /* StartBusiness.jpg */; };
 		F706DEF71C1990DD00AA84D0 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = F706DEF61C1990DD00AA84D0 /* Reachability.m */; };
+		F72BC0FD1C199EBF00CB26B5 /* List of Work Done By Aditya.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F72BC0FC1C199EBF00CB26B5 /* List of Work Done By Aditya.pdf */; };
 		F7CAAD191C17B48200FF32A7 /* Twitter.m in Sources */ = {isa = PBXBuildFile; fileRef = F7CAAD181C17B48200FF32A7 /* Twitter.m */; };
 		F7EE6DB41C156E2400F65506 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F7EE6DB31C156E2400F65506 /* main.m */; };
 		F7EE6DBD1C156E2400F65506 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7EE6DBB1C156E2400F65506 /* Main.storyboard */; };
@@ -63,6 +64,7 @@
 		F706DEF51C1990DD00AA84D0 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		F706DEF61C1990DD00AA84D0 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		F706DEFA1C19947E00AA84D0 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		F72BC0FC1C199EBF00CB26B5 /* List of Work Done By Aditya.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "List of Work Done By Aditya.pdf"; sourceTree = "<group>"; };
 		F7CAAD171C17B48200FF32A7 /* Twitter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Twitter.h; sourceTree = "<group>"; };
 		F7CAAD181C17B48200FF32A7 /* Twitter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Twitter.m; sourceTree = "<group>"; };
 		F7EE6DAF1C156E2400F65506 /* Peek_Challenge_Aditya.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Peek_Challenge_Aditya.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -209,6 +211,7 @@
 		F7EE6DB11C156E2400F65506 /* Peek_Challenge_Aditya */ = {
 			isa = PBXGroup;
 			children = (
+				F72BC0FC1C199EBF00CB26B5 /* List of Work Done By Aditya.pdf */,
 				F706DEF31C1990DD00AA84D0 /* ThirdParty */,
 				F706DEDD1C19820900AA84D0 /* Resources */,
 				F7EE6DF11C15834700F65506 /* Classes */,
@@ -391,6 +394,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F72BC0FD1C199EBF00CB26B5 /* List of Work Done By Aditya.pdf in Resources */,
 				F706DEEA1C19820900AA84D0 /* Icon-60@3x.png in Resources */,
 				F706DEEE1C19820900AA84D0 /* Icon-60@2x.png in Resources */,
 				F7EE6DC51C156E2400F65506 /* LaunchScreen.storyboard in Resources */,
